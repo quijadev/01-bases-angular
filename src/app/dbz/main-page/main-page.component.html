@@ -3,22 +3,32 @@
 
 <div class="row">
     <div class="col">
-        <h3>Personajes</h3>
-        <ul>
-            <li>kuririn - 75,000</li>
-            <li>kokun - 150,000,000</li>
-            <li>begita - 3,000,000</li>
-        </ul>
+        <app-personajes [personajes]="personajes">
+
+        </app-personajes>
+       
     </div>
 
     <div class="col">
         <h3>Agregar</h3>
         <hr>
 
-        <form>
-            <input type="text" placeholder="Nombre"/>
-            <input type="number" placeholder="Nivel de pelea"/>
-            <button>Agregar</button>
+        <form (ngSubmit)="agregar(  )">
+            <!-- Las llaves cuadradas sirven para establecer el valor de ngModel, que seria nuevo.nombre
+                los paréntesis son para indicar que también quiero escuchar el evento.  -->
+            <input 
+                type="text" 
+                placeholder="Nombre"
+                name="nombre"
+                [(ngModel)]="nuevo.nombre" 
+            />
+            <input 
+                type="number" 
+                placeholder="Nivel de pelea"
+                name="poder"
+                [(ngModel)]="nuevo.poder"
+            />
+            <button type="submit">Agregar</button>
         </form>
     </div>
 </div>
