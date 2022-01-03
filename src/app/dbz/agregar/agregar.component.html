@@ -1,0 +1,20 @@
+<h3>Agregar</h3>
+        <hr>
+
+        <form (ngSubmit)="agregar(  )">
+            <!-- Las llaves cuadradas sirven para establecer el valor de ngModel, que seria nuevo.nombre
+                los paréntesis son para indicar que también quiero escuchar el evento.  -->
+            <input 
+                type="text" 
+                placeholder="Nombre"
+                name="nombre"
+                [(ngModel)]="nuevo.nombre" 
+            />
+            <input 
+                type="number" 
+                placeholder="Nivel de pelea"
+                name="poder"
+                [(ngModel)]="nuevo.poder"
+            />
+            <button type="submit">Agregar</button>
+        </form>
